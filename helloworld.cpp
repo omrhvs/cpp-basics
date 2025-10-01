@@ -1,6 +1,44 @@
 #include <iostream>
 
+/*
+        Namespaces.
+        A namespace is a container that holds a set of identifiers (names) and allows the organization of code into logical groups.
+        In C++, the standard library is contained within the "std" namespace. This is why we use "std::cout" instead of just "cout".
+        We can also use the "using namespace std;" directive to avoid having to prefix standard library identifiers with "std::".
+        However, this is not recommended in larger projects as it can lead to name conflicts.
+*/
+
+// using namespace std; // Uncommenting this line would allow us to use cout, endl, string, etc. without the std:: prefix.
+
+namespace myNamespaceA {
+    int o = 42;
+}
+
+namespace myNamespaceB {
+    int o = 100;
+}
+
 int main() {
+
+    int o = 27;
+
+    // If we don't use namespaces, we can access the variable "o" in the current scope.
+    std::cout << o << '\n'; // Outputs 27
+    std::cout << myNamespaceA::o << '\n'; // Outputs 42
+    // The two '::' are called the scope resolution operator.
+    std::cout << myNamespaceB::o << '\n'; // Outputs 100
+
+    /*
+        Entities can have the same name, as long as they are in different namespaces.
+        If we declare "using namespace myNamespaceA;" here, then we can access "o" from myNamespaceA without the prefix.    
+
+        A safer way to use namespaces is to use the "using" directive for specific identifiers, like this:
+        using std::cout; // Now we can use cout without the std:: prefix and still avoid name conflicts with the large amount of identifiers in the std namespace.
+    */
+
+
+
+
 
     // This is a comment
     /*
@@ -70,6 +108,9 @@ int main() {
     const int SCREEN_WIDTH = 800;
     const int SCREEN_HEIGHT = 600;
     std::cout << "Screen resolution is " << SCREEN_WIDTH << "x" << SCREEN_HEIGHT << "." << '\n';
+
+    
+
     
 
     return 0;
