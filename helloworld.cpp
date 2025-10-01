@@ -96,7 +96,6 @@ int main() {
 
     /*
         Constants.
-
         A constant is a variable that cannot be changed after it is assigned. (readly only variable)
     */
     const float PI = 3.14; // PI cannot be changed after this line. Also, constants are usually written in uppercase letters.
@@ -135,6 +134,56 @@ int main() {
     using character_t = char; // This creates a new name "character_t" for the type "char".
     using boolean_t = bool; // This creates a new name "boolean_t" for the type "bool".
     using integer_t = int; // This creates a new name "integer_t" for the type "int". And so on.
+    // Finally, we should only use typedefs and aliases when they make the code more readable. If they make the code less readable, then we should avoid using them.
+
+
+    /*
+        Aritmetic Operators.
+        + : Addition
+        - : Subtraction
+        * : Multiplication
+        / : Division
+        % : Modulus (Remainder)
+        ++ : Increment (Add 1)
+        -- : Decrement (Subtract 1)
+        
+        We can use these operators with variables and constants.
+        
+        Operator Precedence:
+        1. Parentheses ()
+        2. Multiplication *, Division /, Modulus %
+        3. Addition +, Subtraction -
+        4. Increment ++, Decrement --
+
+        Operators with the same precedence are evaluated from left to right.
+        Example:
+        int result = 3 + 4 * 2; // result is 11, because multiplication has higher precedence than addition.
+        int result2 = (3 + 4) * 2; // result2 is
+        14, because parentheses have the highest precedence.
+    */
+    int employees = 30; 
+    employees += 5;
+    std::cout << "Students: " << employees << '\n'; // Outputs 35
+
+    // If we want to increment or decrement by 1, we can use the ++ and -- operators. We see this a lot in loops and iterators.
+    employees++; 
+    std::cout << "Students: " << employees << '\n'; // Outputs 36
+
+    employees*=2; // employees = employees * 2;
+    std::cout << "Students: " << employees << '\n'; // Outputs 72
+
+    employees/=2; // employees = employees / 2;
+    std::cout << "Students: " << employees << '\n'; // Outputs 36
+
+    employees%=5; // employees = employees % 5;
+    std::cout << "Students: " << employees << '\n'; // Outputs 1
+
+    int remainder = 10 % 3; // remainder is 1, because 10 divided by 3 is 3 with a remainder of 1.
+    std::cout << "Remainder: " << remainder << '\n'; // Outputs 1
+
+    // The aritmetic operators have an order of precedence, which determines the order in which they are evaluated: (), *, /, %, +, -.
+    
+
 
     return 0;
 }
