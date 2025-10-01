@@ -1,4 +1,8 @@
 #include <iostream>
+#include <vector> // To explain typedefs and aliases.
+
+typedef std::vector<std::pair<std::string, int>> // We can use typedefs to create a new name for a complex type. Notice, we dont end the line with a semicolon here.
+    pairlist_t; // Now we can use StringIntPairList instead of writing the full type every time. We end the line with a semicolon here. Also notice the _t suffix, which is a common convention for typedefs and aliases.
 
 /*
         Namespaces.
@@ -35,9 +39,6 @@ int main() {
         A safer way to use namespaces is to use the "using" directive for specific identifiers, like this:
         using std::cout; // Now we can use cout without the std:: prefix and still avoid name conflicts with the large amount of identifiers in the std namespace.
     */
-
-
-
 
 
     // This is a comment
@@ -110,8 +111,30 @@ int main() {
     std::cout << "Screen resolution is " << SCREEN_WIDTH << "x" << SCREEN_HEIGHT << "." << '\n';
 
     
+    /*
+        Typedefs and aliases.
+        Reserved keywords that allow us to create new names (aliases) for existing types.
+        A new identifier for an existing type that helps make code more readable and reduce type errors.
+    */
+    pairlist_t pairlist = { {"Omar", 22}, {"Alice", 23}, {"Bob", 24} }; // Now we can use pairlist_t instead of writing the full type every time.
 
-    
+    // A simpler example of typedefs and aliases:
+    typedef std::string text_t;
+
+    // Instead of writing std::string, we can now use text_t. This variable behaves exactly like a std::string.
+    text_t city = "New York";
+    std::cout << "City: " << city << '\n';
+
+    // With integers:
+    typedef int number_t;
+    number_t luckyNumber = 7;
+    std::cout << "Lucky Number: " << luckyNumber << '\n';
+
+    // We can also use the "using" keyword to create type aliases, which is more modern and preferred in C++11 and later. Works better with templates.
+    using decimal_t = double; // This creates a new name "decimal_t" for the type "double".
+    using character_t = char; // This creates a new name "character_t" for the type "char".
+    using boolean_t = bool; // This creates a new name "boolean_t" for the type "bool".
+    using integer_t = int; // This creates a new name "integer_t" for the type "int". And so on.
 
     return 0;
 }
