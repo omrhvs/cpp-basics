@@ -53,9 +53,24 @@ int main() {
     bool isMale = true;
     std::cout << "isMale: " << isMale << '\n';
     
-    std::cout << name << " is " << age << " years old. He has a GPA of " << gpa << ", " <<  gpa2 << " specifically. His Grade is " << grade << '.\n';
+    std::cout << name << " is " << age << " years old. He has a GPA of " << gpa << ", " <<  gpa2 << " specifically. His Grade is " << grade << "." << '\n';
+
+    /*
+        Constants.
+
+        A constant is a variable that cannot be changed after it is assigned. (readly only variable)
+    */
+    const float PI = 3.14; // PI cannot be changed after this line. Also, constants are usually written in uppercase letters.
+    float radius = 5.0;
+    float circumference = 2 * PI * radius;
+    std::cout << "Circumference is " << circumference << "cm." << '\n';
 
 
+    // So, constants are variables that cannot be changed after they are assigned. Like formula constants, screen resolution, etc.
+    const int SCREEN_WIDTH = 800;
+    const int SCREEN_HEIGHT = 600;
+    std::cout << "Screen resolution is " << SCREEN_WIDTH << "x" << SCREEN_HEIGHT << "." << '\n';
+    
 
     return 0;
 }
